@@ -48,13 +48,6 @@ public class Profesor extends Persona{
         this.Titulo = Titulo;
     }
 
-    public static ArrayList<Persona> getListPersona() {
-        return listPersona;
-    }
-
-    public static void setListPersona(ArrayList<Persona> listPersona) {
-        Profesor.listPersona = listPersona;
-    }
 
    
 
