@@ -47,14 +47,45 @@ public class Deber2 {
                             case 1://Modificar Estudiante
                                 modificarEstudiante();
                                 break;
+                            case 2://Modificar Profesor
+                                modificarProfesor();
+                                break;
+                            case 3://Modificar materia
+                                modificarMateria();
+                                break;
+                            case 4://Modificar Secretario
+                                modificarSecretario();
+                                break;
+                            case 5://Modificar Conserje
+                                modificarConserje();
+                                break;
                         }
                     } while (menuTipo()!=6);
                     
                     break;
                 case 3://ELIMINACION
-                     while(menuTipo()!= 6){
+                     
+                        do{
+                            switch(menuTipo()){
+                            case 1://Eliminar Estudiante
+                                elimiarEst();
+                                break;
+                            case 2://Eliminar Profesor
+                                elimiarPro();
+                                break;
+                            case 3://Eliminar materia
+                                elimiarMat();
+                                break;
+                            case 4://Eliminar Secretario
+                                elimiarSecr();
+                                break;
+                            case 5://Eliminar Conserje
+                                elimiarCons();
+                                break;
+                        }
+                        }while(menuTipo()!= 6);
                         
-                    }
+                    
                     break;
                 case 4:
                     do{
@@ -572,4 +603,56 @@ public class Deber2 {
             }
         }
     }
+     
+     public static void elimiarEst(){
+         Scanner sc = new Scanner(System.in);
+         System.out.println("Ingrese la Cedula: ");
+         String cedula = sc.next();
+         for(int i =0;i<listEst.size();i++){
+             if(cedula.equals(listEst.get(i).getCedula())){
+                 listEst.remove(i);
+             }
+         }
+     }
+      public static void elimiarPro(){
+         Scanner sc = new Scanner(System.in);
+         System.out.println("Ingrese la Cedula: ");
+         String cedula = sc.next();
+         for(int i =0;i<listPro.size();i++){
+             if(cedula.equals(listPro.get(i).getCedula())){
+                 listPro.remove(i);
+             }
+         }
+     }
+       public static void elimiarCons(){
+         Scanner sc = new Scanner(System.in);
+         System.out.println("Ingrese la Cedula: ");
+         String cedula = sc.next();
+         for(int i =0;i<listCons.size();i++){
+             if(cedula.equals(listCons.get(i).getCedula())){
+                 listCons.remove(i);
+             }
+         }
+     }
+        public static void elimiarSecr(){
+         Scanner sc = new Scanner(System.in);
+         System.out.println("Ingrese la Cedula: ");
+         String cedula = sc.next();
+         for(int i =0;i<listSec.size();i++){
+             if(cedula.equals(listSec.get(i).getCedula())){
+                 listSec.remove(i);
+             }
+         }
+     } 
+        public static void elimiarMat(){
+         Scanner sc = new Scanner(System.in);
+         System.out.println("Ingrese el  Codigo de la materia: ");
+         String cedula = sc.next();
+         for(int i =0;i<listMat.size();i++){
+             if(cedula.equals(listMat.get(i).getCódigo())){
+                 listMat.remove(i);
+             }
+         }
+     }
+        
 }
