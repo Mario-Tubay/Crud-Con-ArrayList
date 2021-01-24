@@ -68,7 +68,7 @@ public class secretario extends Persona{
     public void consulta() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+   
     @Override
     public String toString() {
         return "Cedula: "+getCedula()+" Nombre: "+getNombre()+" Apellido: "+getApellido()+" Fecha Nacimiento: "+getFecha_de_nacimiento()+

@@ -18,10 +18,10 @@ public class Deber2 {
      
         Estudiante e;
         
-        while(menu()!=4){//Menu Principal 
+        do{//Menu Principal 
             switch(menu()){//Dependiendo de la opcion saldra el tipo
                 case 1://ingreso 
-                    while(menuTipo()!= 6){//menu para escoger el tipo de persona 
+                    do{//menu para escoger el tipo de persona 
                         switch(menuTipo()){//dependiendo que cojamos nos muestra para el ingreso 
                             case 1://ingreso de estudiantes
                                 ingresoEstudiantes();
@@ -39,21 +39,41 @@ public class Deber2 {
                                 ingresoConserje();
                                 break;
                         }
-                    }
+                    }while(menuTipo()!= 6);
                     break;
                 case 2:
-                     while(menuTipo()!= 6){
+                     //while(menuTipo()!= 6){
                         
-                    }
+                    //}
                     break;
                 case 3:
                      while(menuTipo()!= 6){
                         
                     }
                     break;
-                
+                case 4:
+                    do{
+                        switch(menuTipo()){
+                             case 1://buscar de estudiantes
+                               buscarEstudiante();
+                                break;
+                            case 2://buscar de Profesor
+                               
+                                break;
+                            case 3://buscar de Materia
+                               
+                                break;
+                            case 4://buscar de Secretario
+                                ingresoSecretario();
+                                break;
+                            case 5://buscar de Conserje 
+                               
+                                break;
+                        }
+                    }while(menuTipo()!=6);
+                break;
             }
-        }
+        }while(menu()!=5);
     }
     
     public static int menu (){
@@ -62,7 +82,8 @@ public class Deber2 {
         System.out.println("1) Ingreso");
         System.out.println("2) Modificacion");
         System.out.println("3) Eliminacion ");
-        System.out.println("4) Salir");
+        System.out.println("4) Buscar ");
+        System.out.println("5) Salir");
         System.out.print("Opcion: ");
         opc = sc.nextInt();
         return opc;
@@ -284,7 +305,55 @@ public class Deber2 {
          for(int i =0; i<listMat.size();i++){
              System.out.println(""+listMat.get(i).toString());
          }
-         
-         
+    }
+    public static void buscarEstudiante(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese la cedula: ");
+        String cedula = sc.next();
+        for(int i =0; i<listEst.size();i++){
+            if(cedula.equals(listEst.get(i).getCedula())){
+                System.out.println(""+listEst.get(i).toString());
+            }
+        }
+    }
+    public static void buscarProfesor(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese la cedula: ");
+        String cedula = sc.next();
+        for(int i =0; i<listPro.size();i++){
+            if(cedula.equals(listPro.get(i).getCedula())){
+                System.out.println(""+listPro.get(i).toString());
+            }
+        }
+    }
+    public static void buscarSecretario(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese la cedula: ");
+        String cedula = sc.next();
+        for(int i =0; i<listSec.size();i++){
+            if(cedula.equals(listSec.get(i).getCedula())){
+                System.out.println(""+listSec.get(i).toString());
+            }
+        }
+    }
+    public static void buscarMateria(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese la CODIGO: ");
+        String cedula = sc.next();
+        for(int i =0; i<listMat.size();i++){
+            if(cedula.equals(listMat.get(i).getCódigo())){
+                System.out.println(""+listMat.get(i).toString());
+            }
+        }
+    }
+     public static void buscarConserje(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese la CODIGO: ");
+        String cedula = sc.next();
+        for(int i =0; i<listCons.size();i++){
+            if(cedula.equals(listCons.get(i).getCedula())){
+                System.out.println(""+listCons.get(i).toString());
+            }
+        }
     }
 }

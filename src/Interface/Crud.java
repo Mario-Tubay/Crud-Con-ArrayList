@@ -11,5 +11,4 @@ public interface Crud <T> {
     ArrayList ingresar(T t);
     void modificar();
     void consulta();
-
 }
